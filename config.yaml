@@ -1,0 +1,26 @@
+# AI Security Platform Configuration
+
+queues:
+  raw_logs: "data/raw_logs.jsonl"
+  enriched_logs: "data/enriched_logs.jsonl"
+  alerts: "data/alerts.jsonl"
+
+thresholds:
+  high_confidence: 0.8
+  medium_confidence: 0.5
+
+threat_intel:
+  mock_mode: true
+  cache_file: "data/ti_cache.json"
+
+models:
+  isolation_forest: "models/if_model.joblib"
+
+soar:
+  smtp_server: "localhost"
+  smtp_port: 1025 # Mock SMTP server port
+  admin_email: "admin@security.local"
+
+logging:
+  level: "INFO"
+  file: "data/platform.log"
